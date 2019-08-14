@@ -5,7 +5,7 @@ $router->get('/', function () use ($router) {
 });
 
 $router->group(['prefix' => 'api/v1', 'middleware' => 'auth:api'], function () use ($router) {
-    // Users Routes
+    // User Routes
     $router->get('/users', 'UserController@index');
     $router->post('/users', 'UserController@store');
     $router->get('/users/{user}', 'UserController@show');
