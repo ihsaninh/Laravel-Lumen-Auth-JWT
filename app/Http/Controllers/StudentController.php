@@ -71,7 +71,7 @@ class StudentController extends Controller
         $this->validate($request, [
             'nis' => 'required|size:9',
             'nama' => 'required',
-            'email' => 'required|email|unique:students',
+            'email' => 'required',
             'jurusan' => 'required',
             'gender' => 'required',
         ]);

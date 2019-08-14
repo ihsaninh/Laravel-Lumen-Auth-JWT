@@ -4,7 +4,7 @@ $router->get('/', function () use ($router) {
     echo "Welcome to my app";
 });
 
-$router->group(['prefix' => 'api/v1', 'middleware' => 'auth:api'], function () use ($router) {
+$router->group(['prefix' => 'api/v1'/*, 'middleware' => 'auth:api'*/], function () use ($router) {
     // Users Routes
     $router->get('/users', 'UserController@index');
     $router->post('/users', 'UserController@store');

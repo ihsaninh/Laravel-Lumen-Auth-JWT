@@ -57,7 +57,7 @@ class AuthController extends Controller
                 'expires' => app('auth')->factory()->getTTL() * 60,
             ], 200);
 
-        } catch (\Exception $th) {
+        } catch (\Exception $e) {
             return response()->json([
                 'message' => 'Internal server error',
             ], 500);
@@ -71,7 +71,7 @@ class AuthController extends Controller
             return response()->json([
                 'message' => 'Successfully logged out'
             ]);
-        } catch (\Exception $th) {
+        } catch (\Exception $e) {
             return response()->json([
                 'message' => 'Internal server error',
             ], 500);
@@ -85,7 +85,7 @@ class AuthController extends Controller
                 'message' => 'Authenticated User',
                 'data' => app('auth')->user(),
             ]);
-        } catch (\Exception $th) {
+        } catch (\Exception $e) {
             return response()->json([
                 'message' => 'Internal server error',
             ], 500);
